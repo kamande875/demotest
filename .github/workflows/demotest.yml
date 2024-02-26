@@ -29,8 +29,6 @@ jobs:
 
 uses: ercindedeoglu/ftp-transfer-action@v2
 
-        with:
-
           host: ${{secrets.ENDPOINT}}
 
           user: ${{secrets.USERNAME}}
