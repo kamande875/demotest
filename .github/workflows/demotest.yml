@@ -24,3 +24,21 @@ jobs:
 
     - name: Build Angular App
       run: npm run build
+      
+    - name: Upload to Azure WebApp using FTP
+
+uses: ercindedeoglu/ftp-transfer-action@v2
+
+        with:
+
+          host: ${{secrets.ENDPOINT}}
+
+          user: ${{secrets.USERNAME}}
+
+          password: ${{secrets.PASSWORD}}
+
+          forceSSL: true
+
+          source: './dist/barcelona-ng/'
+
+          destination: '/site/wwwroot/'
