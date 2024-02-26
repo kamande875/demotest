@@ -1,37 +1,73 @@
-name: demotest
+name: CI/CD Pipeline
+
+ 
 
 on:
+
   push:
-    branches:
-      - main
+
+    branches: [ main ]  
+
+ 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+
+  build-and-deploy:
+
+    runs-on: ubuntu-latest  # Or your preferred runner
+
+ 
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
 
-    - name: Set Up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
+      - uses: actions/checkout@v3
 
-    - name: Install Dependencies
-      run: npm install
+ 
 
-    - name: Build Angular App
-      run: npm run build
+      - name: Use Node.js 18.18.2
 
+        uses: actions/setup-node@v3
 
-       - name: Deploy to Azure Web App
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ${{ 990}}
-          username: ${{ megaclaim__test\$megaclaim__test }}
-          password: ${{r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg }}
-          server-dir: '/site/wwwroot'
-          local-dir: ' /home/runner/work/demotest/demotest/dist/demotest
-          exclude: ''
-          args: --verbose --disable-utf8
+
+          node-version: 17
+ 
+
+      - name: Install dependencies
+
+        run: npm install  
+
+       
+
+      - name: Install cli
+
+        run: npm install --save-dev @angular/cli
+
+ 
+
+      - name: Build the Angular app
+
+        run: npx ng build
+
+ 
+
+      - name: Upload to Azure WebApp using FTP
+
+        uses: ercindedeoglu/ftp-transfer-action@v2
+
+        with:
+
+          host: ${{990}}
+
+          user: ${{megaclaim__test\$megaclaim__test
+
+}}
+
+          password: ${{r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg}}
+
+          forceSSL: true
+
+          source: './dist/
+
+          destination: '/site/wwwroot/'
+      
