@@ -1,0 +1,37 @@
+name: demotest
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build Angular App
+      run: npm run build
+
+
+       - name: Deploy to Azure Web App
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ 990}}
+          username: ${{ megaclaim__test\$megaclaim__test }}
+          password: ${{r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg }}
+          server-dir: '/site/wwwroot'
+          local-dir: ' /home/runner/work/demotest/demotest/dist/demotest
+          exclude: ''
+          args: --verbose --disable-utf8
