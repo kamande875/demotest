@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v20
 
       - name: Set Up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v20
         with:
-          node-version: 14
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
@@ -31,19 +31,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v20
 
       - name: Deploy to Azure Web App
-        uses: Azure/webapps-deploy@v2
+        uses: Azure/webapps-deploy@v20
         with:
-          app-name: '<Your-App-Name>'  # Replace with your Azure Web App name
-          slot-name: 'production'  # If deploying to a specific slot, replace with the slot name
+          app-name: '<demotest>'  
+          slot-name: 'production'  #
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: 'dist/your-angular-app'  # Adjust to your Angular app's build output directory
+          package: 'dist/your-angular-app'  #
 
-  cleanup:
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
-      - name: Clean up
-        run: rm -rf ${{ github.workspace }}/dist
