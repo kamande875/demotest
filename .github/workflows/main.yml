@@ -28,10 +28,12 @@ jobs:
       uses: ercindedeoglu/ftp-transfer-action@v2
       with:
 
-          host: ${{ftps://waws-prod-dxb-007.ftp.azurewebsites.windows.net/site/wwwroot}}
-          user: ${{megaclaim__test\$megaclaim__test}}
-          password: ${{r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg}}
-          source: './dist/barcelona-ng/'
-          destination: '/site/wwwroot/'
+         host: ${{secrets.ENDPOINT}}
 
- 
+         user: ${{secrets.USERNAME}}
+
+      password: ${{secrets.PASSWORD}}
+
+      source: './dist/barcelona-ng/'
+
+    destination: '/site/wwwroot/'
