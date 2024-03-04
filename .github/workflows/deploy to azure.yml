@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v20
 
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
@@ -30,14 +30,14 @@ jobs:
 
     steps:
       - name: Deploy to Azure
-        uses: azure/login@v1
+        uses: azure/login@v20
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Set Up Node.js for Azure Deployment
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 20
 
       - name: Install Azure CLI
         run: |
