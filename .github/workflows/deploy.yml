@@ -1,0 +1,64 @@
+on:
+
+  push:
+
+    branches:  main 
+ 
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: ubuntu-latest  
+ 
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+ 
+
+      - name: Use Node.js 14
+
+        uses: actions/setup-node@v3
+
+        with:
+
+          node-version: 14
+
+ 
+
+      - name: Install dependencies
+
+        run: npm install  
+       
+
+      - name: Install cli
+
+        run: npm install --save-dev @angular/cli
+
+ 
+
+      - name: Build the Angular app
+
+        run: npx ng build
+
+ 
+
+      - name: Upload to Azure WebApp using FTP
+
+        uses: ercindedeoglu/ftp-transfer-action@v2
+
+        with:
+
+          host: ${{secrets.ENDPOINT}}
+
+          user: ${{secrets.USERNAME}}
+
+          password: ${{secrets.PASSWORD}}
+
+          forceSSL: true
+
+          source: './dist/'
+
+          destination: '/site/wwwroot/'
