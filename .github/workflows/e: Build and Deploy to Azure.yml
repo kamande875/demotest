@@ -27,4 +27,4 @@ jobs:
       - name: FTP Deploy to Azure
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ${{ megaclaim_test }}
+          server: ftp.azurewebsites.windows.net
