@@ -18,8 +18,8 @@ jobs:
       - name: Build Angular App
         run: npm run build --prod
       - name: FTP Deploy to Azure
-        id: ftp-deploy
+        id: ftp-deploy 
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ ftps://waws-prod-dxb-007.ftp.azurewebsites.windows.net/site/wwwroot
-            }}
+              with:
+            server:"ftps://waws-prod-dxb-007.ftp.azurewebsites.windows.net/site/wwwroot"
+ 
