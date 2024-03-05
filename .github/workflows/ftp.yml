@@ -27,4 +27,12 @@ jobs:
       - name: FTP Deploy to Azure
         id: ftp-deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
+
+          with:
+      server: ${{ secrets.FTP_SERVER }}
+    username: ${{ secrets.FTP_USERNAME }}
+    password: ${{ secrets.FTP_PASSWORD }}
+    local-dir: ./dist
+    remote-dir: ${{ secrets.FTP_REMOTE_DIR }}
+    fail-on-warnings: false
         
