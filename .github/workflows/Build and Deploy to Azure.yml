@@ -45,6 +45,4 @@ jobs:
           curl -sL https://aka.ms/InstallAzureCLIDeb | 
 
       - name: Deploy to Azure using FTP
-        run: |
-          az webapp deployment user set --user-name ${{megaclaim__test\$megaclaim__test }} --password ${{ r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg}}
-          lftp -c "set ftp:ssl-allow no; open -u ${{ secrets.AZURE_FTP_USERNAME }},${{ secrets.AZURE_FTP_PASSWORD }} ftps://waws-prod-dxb-007.ftp.azurewebsites.windows.net/site/wwwroot
+      
