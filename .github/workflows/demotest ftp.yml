@@ -31,6 +31,6 @@ jobs:
           server: ftp.azurewebsites.windows.net
           username: megaclaim__test
           password: r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg
-          local-dir: ./dist/demotest
+          local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot
       
