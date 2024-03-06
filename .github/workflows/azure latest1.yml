@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+
       - name: Install Dependencies
         run: npm install
 
@@ -34,5 +35,8 @@ jobs:
           remote-dir: /site/wwwroot/
           timeout-seconds: 500  
           debug: true
-          protocol: 'ftp'
+          protocol: ftps 
+          port: 990
           fail-on-warnings: false
+
+          
