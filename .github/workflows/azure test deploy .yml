@@ -34,6 +34,6 @@ jobs:
           local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot/
           fail-on-warnings: false
-        continue-on-error: true
+
           
         
