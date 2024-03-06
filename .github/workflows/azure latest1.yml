@@ -37,7 +37,7 @@ jobs:
           debug: true
           protocol: ftps 
           port: 990
-          fail-on-warnings: false
           passive-mode:  true
+          explicit-tls: true
 
           
