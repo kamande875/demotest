@@ -31,6 +31,6 @@ jobs:
           server: waws-prod-dxb-007.ftp.azurewebsites.windows.net
           username: megaclaim__test
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/demotest/
+          local-dir: ./dist/
           remote-dir: /site/wwwroot
           timeout-minutes: 12000
