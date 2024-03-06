@@ -33,4 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot
-          timeout-minutes:  120000
+          timeout-minutes:  20
+          retries: 3
