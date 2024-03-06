@@ -33,5 +33,6 @@ jobs:
           password: r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg
           local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot/
-          timeout-seconds:  300
-          fail-on-warnings: false
+          port: 990
+          protocol: ftp
+        
