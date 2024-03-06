@@ -16,7 +16,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 14
 
       - name: Install Dependencies
         run: npm install
@@ -33,5 +33,5 @@ jobs:
           password: r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg
           local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot/
-          timeout-seconds:  1200
+          timeout-seconds:  300
           fail-on-warnings: false
