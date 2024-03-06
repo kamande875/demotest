@@ -15,15 +15,10 @@ jobs:
     steps:
 
       - uses: actions/checkout@v3
-
       - name: Set up Node.js
-
         uses: actions/setup-node@v3
-
         with:
-
           node-version: 20
-
       - name: Install dependencies
 
         run: npm install
@@ -35,7 +30,6 @@ jobs:
       - name: Deploy to Azure Web App via FTP
 
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
-
         with:
 
           server: waws-prod-dxb-007.ftp.azurewebsites.windows.net
@@ -45,3 +39,4 @@ jobs:
           port: 990
           protocol: ftp
           local-dir: ./dist/demotest/
+          timeout-minintes: 15 
