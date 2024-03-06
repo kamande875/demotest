@@ -33,11 +33,11 @@ jobs:
           password: 'r51i2GeuirQzjAg4lkKXX2n8wHBNHmud2qm6GAu1LoFR31hAnmdNM0x6eArg'
           local-dir: ./dist/demotest/
           remote-dir: /site/wwwroot/
-          timeout-minutes: 20
+          timeout-minutes: 230
           debug: true
           protocol: ftps 
           port: 990
           passive-mode:  true
-          explicit-tls: false 
+          explicit-tls: true
 
           
