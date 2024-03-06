@@ -31,6 +31,6 @@ jobs:
           server: megaclaim-test.azurewebsites.net
           username: megaclaim__test\$megaclaim__test
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/demotest/
+          local-dir: C:\Users\ben\demotest
           remote-dir: /site/wwwroot
           timeout-minutes:  120000
