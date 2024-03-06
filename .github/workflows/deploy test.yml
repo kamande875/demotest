@@ -33,4 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           remote-dir: /site/wwwroot
-          timeout-minutes: 12000
+          timeout-minutes: 5
+          passive: true 
