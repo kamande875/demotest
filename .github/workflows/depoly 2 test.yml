@@ -38,3 +38,4 @@ jobs:
           remote-dir: /site/wwwroot/
           local-dir: ./dist/demotest/
           timeout-minintes: 15 
+          debug: true
